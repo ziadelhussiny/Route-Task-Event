@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 import './App.css';
+import axios from 'axios';
+import { data as localData } from './api'; // Importing local data from api.js
 
 function App() {
+    const [useLocalData, setUseLocalData] = useState(false); // Flag to toggle between local data and API data
     const [data, setData] = useState({ customers: [], transactions: [] });
     const [filter, setFilter] = useState({ customerName: '', transactionAmount: '' });
     const [customerSelection, setCustomerSelection] = useState(null);
@@ -12,10 +14,14 @@ function App() {
     const [chartOptions, setChartOptions] = useState({});
 
     useEffect(() => {
-        axios.get('http://localhost:5500/api/data')
-            .then(response => setData(response.data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
+        if (useLocalData) {
+            setData(localData); // Use local static data
+        } else {
+            axios.get('http://localhost:5500/api/data')
+                .then(response => setData(response.data))
+                .catch(error => console.error('Error fetching data:', error));
+        }
+    }, [useLocalData]);
 
     useEffect(() => {
         if (customerSelection) {
@@ -87,6 +93,9 @@ function App() {
                     value={filter.transactionAmount}
                     onChange={handleFilterChange}
                 />
+                <button onClick={() => setUseLocalData(!useLocalData)}>
+                    Toggle Data Source: {useLocalData ? 'Local' : 'API'}
+                </button>
             </div>
 
             <table>
@@ -124,4 +133,4 @@ function App() {
     );
 }
 
-export default App;
+export default App;
