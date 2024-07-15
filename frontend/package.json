@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://github.com/ahmedosama33/route-task",
+  "homepage": "http://ziadelhussiny.github.io/Route-Task-Event",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --repo=https://github.com/ahmedosama33/route-task"
+    "deploy": "gh-pages -d build --repo=https://github.com/ziadelhussiny/Route-Task-Event"
   },
   "eslintConfig": {
     "extends": [

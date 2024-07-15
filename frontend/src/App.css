@@ -1,30 +1,65 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* App.css */
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   margin: 0;
   padding: 20px;
-  background-color: #B6C7AA;
 }
 
 h1 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: italic;
   text-align: center;
-  color: #000;
+  color: #333;
 }
 
 input[type="text"], input[type="number"] {
   padding: 10px;
   margin: 10px;
   border: 1px solid #ccc;
-  border-radius: 15px;
+  border-radius: 4px;
   width: 200px;
 }
 
 input[type="text"]:focus, input[type="number"]:focus {
-  border-color: #000;
+  border-color: #5e9fe3;
   outline: none;
 }
 
@@ -32,13 +67,13 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  background-color: #E7D4B5;
+  background-color: #fff;
 }
 
 th, td {
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   padding: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 th {
@@ -60,16 +95,15 @@ tbody tr:hover {
   color: #777;
   margin-top: 20px;
 }
-.customer{
+.customerinput{
   text-align: center;
   justify-content: center;
-  background-color: #A0937D;
   transition: transform 0.3s ease; 
-  box-shadow: 3px 3px 3px 3px #fff;
+  box-shadow: 5px 5px 5px 5px rgb(0, 162, 255);
   border-radius: 5px;
   
 }    
 
-.customer:hover {
-    transform: translateY(-5px);
+.customerinput:hover {
+    transform: translateY(-5px); 
 }
